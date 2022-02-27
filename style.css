@@ -1,0 +1,29 @@
+body {background-color:rgb(0, 0, 0);
+    font-family:arial;
+    color:white;
+}
+h1{color:grey;
+font-family: verdana;
+}
+
+.maindiv {
+    background-color:white;
+    color:rgb(0, 0, 0);
+    width: 500px;
+    padding:20px;
+    border-radius:25px;
+    align:center;
+}
+
+.innerdiv {
+    text-align:center;
+}
+
+.footer {
+    text-align:left;
+}
+
+
+.results {
+    background-color: chartreuse;
+}
