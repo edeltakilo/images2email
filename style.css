@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {background-color:rgb(0, 0, 0);
     font-family:arial;
     color:white;
@@ -27,3 +28,7 @@ font-family: verdana;
 .results {
     background-color: chartreuse;
 }
+=======
+body {background-color:tan;}
+h1{color:green;}
+>>>>>>> 3b520ac3d2015e4a3be37248e76a6d48c7afff98

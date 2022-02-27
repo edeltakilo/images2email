@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function compute()
 {
     // first we'll capture the inputs
@@ -36,3 +37,10 @@ function updateRate()
         
     }
         
+=======
+function compute()
+{
+    p = document.getElementById("principal").value;
+    
+}
+>>>>>>> 3b520ac3d2015e4a3be37248e76a6d48c7afff98
