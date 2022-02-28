@@ -1,20 +1,30 @@
 function compute()
 {
-   
+   // capture customer name from the form
     var customer = document.getElementById("customer").value;
+    
+    // make sure it is filled in
     if(customer == "")    {
         alert("Enter a Customer");
         document.getElementById("customer").focus();
         return;
     }
+
+    // capture the order number from the form
     var order = document.getElementById("order").value;
+    
+    // make sure this is filled in
     if(order == "")
     {
         alert("Enter the Order Number");
         document.getElementById("customer").focus();
         return;
     }
+
+    // capture which name is selected to receive the email
     var towho = document.querySelector('input[name="pick"]:checked').value;
+  
+    // send the email to the selected person
     if(towho == "erik")
     {
         Email.send({
@@ -56,17 +66,15 @@ function compute()
           message => alert("Sent to Kim")
         );
     }
-    else if(towho == null)
-    {
-        alert("Choose a person")
-        document.getElementById("towho").focus()
-        return;
-    }
    
+   
+    // below we will ask if there are more emails to send
     var resultDisplay = document.getElementById("result");
+  
+    // and provide a link to refresh the page
     resultDisplay.innerHTML = "The order " + order 
     + " for " + customer + " was sent to " + towho + "." 
-    + "<br>Start over? <a href='https://www.prodeckparts.com'>Click Here.</a>";
+    + "<br>Start over? <a href='#'>Click Here.</a>";
    
 
 }
