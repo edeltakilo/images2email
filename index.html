@@ -2,41 +2,46 @@
 <html>
     <head>
         <title>Ready to Ship Form</title>
-    <script src="script.js"></script>
+    <script src="script.js"></script> <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="maindiv">
             <h1>Order Ready to Ship</h1>
+            <br/>
 <div class="innerdiv">
-            Amount <input type="number"  id="principal">  
+            Customer: <input type="text"  id="customer">  
             <br/><br/>
-            Rate <input onchange="updateRate()" type="range"  step="0.25" id="rate" min="1" max="20" value="10.25" > 
-            <span id="rate_val">10.25%</span>
-             <br/><br/>
-            No. of Years <select  id="years">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-                <br/><br>
-        
-            <span id="result"></span>
-            <br><br>
+            Order No.: <input type="text"  id="order"> 
+
+                <br/><br/><hr/><br>
+
+            <div id="towho">
+                <p>Choose One:
+            <label for="ek">
+            <input type="radio" id="ek" name="pick" value="erik">Erik</label> 
+
+            <strong> or </strong>
+
+            <label for="kg">
+            <input type="radio" id="kg" name="pick" value="kim">Kim</label>
+            </p>
+        </div>
+
+            <br/>
+
+            <label for="images">Upload Images: </label><input type="file" accept="image/*" id="images">
+
+            <br/><br/>
     
-            <button onclick="compute()">Compute Interest</button>
+            <button onclick="compute()">Send Now</button>
+            <br/><br/>
         <span id="result"></span>
     </div>
 <br><br>
         <footer class="footer">
-            &#169; This calculator belongs to Erik Kieffer.
+            &#169; 2022 Bugh Inc.
         </footer>
         </div>
         

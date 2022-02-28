@@ -12,7 +12,7 @@ font-family: verdana;
     width: 500px;
     padding:20px;
     border-radius:25px;
-    align:center;
+    text-align:center;
 }
 
 .innerdiv {
@@ -21,6 +21,7 @@ font-family: verdana;
 
 .footer {
     text-align:left;
+    font-size:10px;
 }
 
 
