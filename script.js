@@ -1,38 +1,76 @@
 function compute()
 {
-    // first we'll capture the inputs
-    var principal = document.getElementById("principal").value;
-    // this will send an alert if 0 is entered
-    if(principal == "" || principal <= 0)
-    {
-        alert("Please enter a positive number");
-        document.getElementById("principal").focus();
+   
+    var customer = document.getElementById("customer").value;
+    if(customer == "")    {
+        alert("Enter a Customer");
+        document.getElementById("customer").focus();
         return;
     }
-    // continuing to capture the user inputs
-    var rate = document.getElementById("rate").value;
-    var years = document.getElementById("years").value;
+    var order = document.getElementById("order").value;
+    if(order == "")
+    {
+        alert("Enter the Order Number");
+        document.getElementById("customer").focus();
+        return;
+    }
+    var towho = document.querySelector('input[name="pick"]:checked').value;
+    if(towho == "erik")
+    {
+        Email.send({
+            Host : "mail.prodeckparts.com",
+            Username : "no-reply@prodeckparts.com",
+            Password : "bugh2182019",
+            To : 'edeltakilo@gmail.com',
+            From : "no-reply@prodeckparts.com",
+            Subject : "This is the subject",
+            Body : "The order " + order 
+            + " for " + customer + " is ready to ship.",
+            Attachments : [
+                {
+                    name : "smtpjs.png",
+                    path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+                }]
+        }).then(
+          message => alert("Sent to Erik")
+        );
+    }
 
-    //this next line will calculate the interest
-    var interest = (principal * years * rate) / 100;
-    
-    // creating the current year and adding the number of years selected by th user
-    var dateNow = new Date();
-    var yearNow = parseInt(dateNow.getFullYear()) + parseInt(years);
-    
-    // here is where we display the reults after the button is clicked
+    else if(towho == "kim")
+    {
+        Email.send({
+            Host : "mail.prodeckparts.com",
+            Username : "no-reply@prodeckparts.com",
+            Password : "bugh2182019",
+            To : 'erikdkieffer@gmail.com',
+            From : "no-reply@prodeckparts.com",
+            Subject : "This is the subject",
+            Body : "The order " + order 
+            + " for " + customer + " is ready to ship.",
+            Attachments : [
+                {
+                    name : "smtpjs.png",
+                    path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+                }]
+        }).then(
+          message => alert("Sent to Kim")
+        );
+    }
+    else if(towho == null)
+    {
+        alert("Choose a person")
+        document.getElementById("towho").focus()
+        return;
+    }
+   
     var resultDisplay = document.getElementById("result");
-    resultDisplay.innerHTML = "If you deposit " + "<span class='results'>$" 
-    + principal + "</span>."  + ", <br> at an interest rate of "+ "<span class='results'>" 
-    + rate + "%</span>." + "<br> You will receive an amount of " + "<span class='results'>$" 
-    + interest + "</span>" + ", <br> in interest by the year " + "<span class='results'>" + yearNow + "</span>";
+    resultDisplay.innerHTML = "The order " + order 
+    + " for " + customer + " was sent to " + towho + "." 
+    + "<br>Start over? <a href='https://www.prodeckparts.com'>Click Here.</a>";
+   
 
 }
-// the following function will create a display for the slider value
-function updateRate()
-    {
-        var rateval = document.getElementById("rate").value;
-        document.getElementById("rate_val").innerText=rateval;
+
         
-    }
+
         
